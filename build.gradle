@@ -1,0 +1,42 @@
+group 'com.epam.training.project'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+    mavenLocal()
+    maven { url 'https://jitpack.io' }
+}
+
+configurations {
+    testCompile.extendsFrom compileOnly
+}
+
+// this turns logging on in tests:
+test.testLogging.showStandardStreams = true
+
+dependencies {
+    compile 'org.apache.logging.log4j:log4j-api:+',
+            'org.apache.logging.log4j:log4j-core:+',
+            'io.javaslang:javaslang:+',
+            'com.h2database:h2:+'
+
+
+    providedCompile 'org.apache.tomcat:tomcat-api:+',
+                    'org.apache.tomcat:tomcat-jsp-api:+'
+
+    compileOnly 'org.projectlombok:lombok:+'
+
+    testCompile 'org.junit.jupiter:junit-jupiter-api:+',
+                'org.hamcrest:java-hamcrest:+'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4'
+}
