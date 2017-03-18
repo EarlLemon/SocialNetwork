@@ -11,5 +11,5 @@ public interface LessonDao {
 
     Collection<Lesson> getLessonsByUserId(int userId);
 
-    void addPost(String postText, int userId);
+    void addLesson (String lessonText, int userId);
 }

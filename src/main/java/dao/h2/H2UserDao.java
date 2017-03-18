@@ -27,6 +27,17 @@ public class H2UserDao implements UserDao {
     private static final String ADD_USER = "INSERT INTO User (firstname, lastname, email, password, username, gropu_n)" +
             " VALUES (?,?,?,?,?,?)";
 
+    // return the service instance
+
+    public static H2UserDao getInstance() {
+        if (h2UserDao == null) {
+            h2UserDao = new H2UserDao();
+            Log.debug("gettting instance of " + H2UserDao.class);
+        }
+        return h2UserDao;
+    }
+
+
 
     @Override
     public void addUser(User user) throws UserAlreadyExistExeption {
@@ -70,7 +81,7 @@ public class H2UserDao implements UserDao {
                 );
             }
         } catch (InterruptedException | SQLException e) {
-            Log.error("Can not add user", e);
+            Log.error("Can not getAll users", e);
         }
 
 

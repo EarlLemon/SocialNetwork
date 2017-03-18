@@ -3,12 +3,12 @@ package model;
 public class Lesson {
     private final int lessonId;
     private final int userId;
-    private final String post;
+    private final String lessonText;
 
-    public Lesson(int lessonId, int userId, String post) {
+    public Lesson(int lessonId, int userId, String lessonText) {
         this.lessonId = lessonId;
         this.userId = userId;
-        this.post = post;
+        this.lessonText = lessonText;
     }
 
     public int getLessonId() {
@@ -24,8 +24,8 @@ public class Lesson {
 
         return "Lesson{"+
                 "lessonId = " + lessonId +
-                ", UserId = " + userId +
-                ", Post = " + post +
+                ", userId = " + userId +
+                ",  lessonText= " + lessonText +
                 '}';
     }
 
@@ -42,7 +42,7 @@ public class Lesson {
             return false;}
         if (lessonId != lessons.lessonId){
             return false;}
-        return post != null ? post.equals(lessons.post) : lessons.post == null;
+        return lessonText != null ? lessonText.equals(lessons.lessonText) : lessons.lessonText == null;
         }
 
         @Override
@@ -50,7 +50,7 @@ public class Lesson {
             int result = userId;
             result = 31 * result + userId;
             result = 31 * result + lessonId;
-            result = 31 * result + (post != null ? post.hashCode():0);
+            result = 31 * result + (lessonText != null ? lessonText.hashCode():0);
             return result;
         }
 

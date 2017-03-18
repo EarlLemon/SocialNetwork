@@ -13,7 +13,7 @@ CREATE TABLE User (
 CREATE TABLE Lesson (
   lesson_id INT AUTO_INCREMENT PRIMARY KEY,
   user_id   INT          NOT NULL,
-  post      VARCHAR(250) NOT NULL,
+  lesson_text      VARCHAR(250) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES User (id)
 
 );
