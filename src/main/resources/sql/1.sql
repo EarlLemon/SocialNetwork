@@ -10,15 +10,15 @@ CREATE TABLE User (
   UNIQUE (username)
 );
 
-CREATE TABLE Lessons (
-  id_lesson INT AUTO_INCREMENT PRIMARY KEY,
-  id_user   INT          NOT NULL,
+CREATE TABLE Lesson (
+  lesson_id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id   INT          NOT NULL,
   post      VARCHAR(250) NOT NULL,
-  FOREIGN KEY (id_user) REFERENCES User (id)
+  FOREIGN KEY (user_id) REFERENCES User (id)
 
 );
 CREATE TABLE Subscription (
-  id_sub      INT AUTO_INCREMENT PRIMARY KEY,
+  sub_id      INT AUTO_INCREMENT PRIMARY KEY,
   subsription INT NOT NULL
 
 );

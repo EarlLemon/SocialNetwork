@@ -1,30 +1,30 @@
 package model;
 
-public class Lessons {
-    private final int idLesson;
-    private final int idUser;
+public class Lesson {
+    private final int lessonId;
+    private final int userId;
     private final String post;
 
-    public Lessons(int idLesson, int idUser, String post) {
-        this.idLesson = idLesson;
-        this.idUser = idUser;
+    public Lesson(int lessonId, int userId, String post) {
+        this.lessonId = lessonId;
+        this.userId = userId;
         this.post = post;
     }
 
-    public int getIdLesson() {
-        return idLesson;
+    public int getLessonId() {
+        return lessonId;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getUserId() {
+        return userId;
     }
 
     @Override
     public String toString(){
 
         return "Lesson{"+
-                "idLesson = " + idLesson +
-                ", idUser = " + idUser +
+                "lessonId = " + lessonId +
+                ", UserId = " + userId +
                 ", Post = " + post +
                 '}';
     }
@@ -36,20 +36,20 @@ public class Lessons {
         if (o == null || getClass() != o.getClass()){
             return false;}
 
-         Lessons lessons = (Lessons) o;
+         Lesson lessons = (Lesson) o;
 
-        if (idUser != lessons.idUser){
+        if (userId != lessons.userId){
             return false;}
-        if (idLesson != lessons.idLesson){
+        if (lessonId != lessons.lessonId){
             return false;}
         return post != null ? post.equals(lessons.post) : lessons.post == null;
         }
 
         @Override
         public int hashCode(){
-            int result = idUser;
-            result = 31 * result + idUser;
-            result = 31 * result + idLesson;
+            int result = userId;
+            result = 31 * result + userId;
+            result = 31 * result + lessonId;
             result = 31 * result + (post != null ? post.hashCode():0);
             return result;
         }

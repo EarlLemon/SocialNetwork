@@ -43,10 +43,8 @@ public class H2UserDao implements UserDao {
 
             preparedStatement.execute();
 
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | SQLException e) {
             Log.error("Can not add user", e);
-        } catch (SQLException e) {
-            Log.error("Can not add user in DB", e);
         }
 
     }
@@ -71,10 +69,8 @@ public class H2UserDao implements UserDao {
                         )
                 );
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | SQLException e) {
             Log.error("Can not add user", e);
-        } catch (SQLException e) {
-            Log.error("Can not add user in DB", e);
         }
 
 
@@ -103,10 +99,8 @@ public class H2UserDao implements UserDao {
                 }
             }
 
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | SQLException e) {
             Log.error("Cannot get user by id = " + id, e);
-        } catch (SQLException e) {
-            Log.error("Cannot get user by id from bd = " + id, e);
         }
 
         return user;
@@ -133,10 +127,8 @@ public class H2UserDao implements UserDao {
                     );
                 }
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | SQLException e) {
             Log.error("Cannot get user by email, where email = " + email, e);
-        } catch (SQLException e) {
-            Log.error("Cannot get user by email from bd, where email = " + email, e);;
         }
         return user;
     }
