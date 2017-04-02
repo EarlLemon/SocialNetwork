@@ -1,103 +1,88 @@
 package model;
 
 public class User {
-    private final int id;
-    private final String firstName;
-    private final String lastName;
-    private final String email;
-    private final String password;
-    private final String username;
-    private final String groupN;
+    private int id;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private String password;
+    private String username;
+
+    public User() {
+    }
 
 
-    public User(int id, String firstName, String lastName, String email, String password, String groupN, String username) {
+    public User(int id, String firstname, String lastname, String email, String password, String username) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.groupN = groupN;
         this.username = username;
 
-    }
 
-
-
-    @Override
-    public boolean equals(Object o) {
-        //Self Check perfomance benefit
-        if (this == o) {
-            return true;
-        }
-        //Null Check  type check and cast
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        User user = (User) o;
-
-        if (id != user.id) {
-            return false;
-        }
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) {
-            return false;
-        }
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) {
-            return false;
-        }
-        if (email != null ? !email.equals(user.email) : user.email != null) {
-            return false;
-        }
-        if (password != null ? !password.equals(user.password) : user.password != null) {
-            return false;
-        }
-        if (groupN != null ? !groupN.equals(user.groupN) : user.groupN != null) {
-            return false;
-        }
-        return username != null ? username.equals(user.username) : user.username == null;
-    }
-
-    // переопределение хеша по заветам Блоха
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (groupN != null ? groupN.hashCode() : 0);
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        return result;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getGroupN() {
-        return groupN;
     }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id = " + id +
+                ",  firstname = " + firstname +
+                ",  lastname= " + lastname +
+                ",  username "+ username +
+                '}';
+    }
 }
+
+
+
+
 

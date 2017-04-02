@@ -7,7 +7,7 @@ import model.User;
 import java.util.Collection;
 
 public interface UserDao {
-    void addUser(User user) throws UserAlreadyExistExeption;
+    int addUser(User user) throws UserAlreadyExistExeption;
 
     Collection<User> getAll();
 
